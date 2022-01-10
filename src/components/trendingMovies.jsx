@@ -45,7 +45,7 @@ export default function TrendingMovies(props) {
       const titletitle = localStorage.getItem("movie-title");
       setLocalImage(imgimg);
       setLocalTitle(titletitle);
-    }
+    } return
   }, []);
 
   return (
