@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getMovies, getTrending } from './api/api';
-import Home from './components/pages/home';
+import Home from './pages/home';
 import TrendingMovies from './components/trendingMovies';
 
 function App() {
