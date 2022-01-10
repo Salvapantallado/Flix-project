@@ -13,9 +13,6 @@ export default function Home(props) {
   const { defaultMovie, popularMovies } = props;
   const imageUrl = `https://image.tmdb.org/t/p/original`;
 
-  console.log(defaultMovie);
-  console.log(popularMovies);
-
   if (defaultMovie.length !== 1) {
     return <div className="bg animate__zoomIn"></div>;
   } else if (window.innerWidth <= 875) {
@@ -29,7 +26,7 @@ export default function Home(props) {
         <Navbar />
 
         <DefaultMovieTitle defaultMovie={defaultMovie} />
-        {/* <img src="" id="imgPreview" alt="Preview" /> */}
+
         <TrendingMovies popularMovies={popularMovies} imageUrl={imageUrl} />
       </div>
     );
@@ -44,7 +41,7 @@ export default function Home(props) {
         <Navbar />
 
         <DefaultMovieTitle defaultMovie={defaultMovie} />
-        {/* <img src="" id="imgPreview" alt="Preview" /> */}
+       
         <TrendingMovies popularMovies={popularMovies} imageUrl={imageUrl} />
       </div>
     );
