@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 
-import Salir from "./images/Salir.png";
-import Subir from "./images/Subir.png";
+import Cerrar from "./images/cerrar.png";
 
 const fileTypes = ["JPG", "PNG"];
 
@@ -11,6 +10,9 @@ export default function LoadMovie(props) {
 
   const [file, setFile] = useState([]);
   const [title, setTitle] = useState("");
+  const [localMovie, setLocalMovie] = useState("")
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
 
   const handleImageChange = (file) => {
     setFile(file);
@@ -30,7 +32,7 @@ export default function LoadMovie(props) {
     localStorage.setItem("movie-title", title.target.value);
     if (title) {
       const localTitle = localStorage.getItem("movie-title");
-      console.log(localTitle);
+      setLocalMovie(localTitle)
     }
   };
 
@@ -40,10 +42,11 @@ export default function LoadMovie(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleClose();
-    console.log(file);
+    setIsSubmitted(true)
   };
 
+
+  {if(isSubmitted === false) 
   {
     if (window.innerWidth <= 875) {
       return (
@@ -84,10 +87,14 @@ export default function LoadMovie(props) {
                   placeholder="Titulo"
                 ></input>
 
-                <div className="buttonBox">
-                  <img onClick={handleSubmit} src={Subir} alt="subiendo" />
-                  <img onClick={handleClose} src={Salir} alt="saliendo" />
-                </div>
+                  {title !== "" && file.length !== 0 ? (<div className="buttonBox">
+                  <button type="submit">Subir pelicula</button>
+                </div>) : (<div className="buttonBox" >
+                  <button type="submit" disabled>Subir pelicula</button>
+                </div>) }
+                  <div className="exitButton">
+                    <button onClick={handleClose}>Salir</button>
+                    </div>
               </div>
             </form>
           </div>
@@ -97,15 +104,15 @@ export default function LoadMovie(props) {
       return (
         <div className="box">
           <div className="closeButton">
-            <button onClick={handleClose}>X</button>
+            <img src={Cerrar} onClick={handleClose} />
           </div>
           <div className="boxContainer">
             <div
               className="liteflix"
               style={{
                 fontWeight: "100",
-                fontSize: "20px",
-                marginBottom: "40px",
+                fontSize: "30px",
+                marginBottom: "10px",
               }}
             >
               Agregar pelicula
@@ -134,15 +141,61 @@ export default function LoadMovie(props) {
                   onChange={handleTextChange}
                   placeholder="Titulo"
                 ></input>
-
-                <div className="buttonBox">
-                  <img src={Subir} alt="subiendo" />
-                </div>
+                {title !== "" && file.length !== 0 ? (<div className="buttonBox">
+                  <button type="submit">Subir pelicula</button>
+                </div>) : (<div className="buttonBox" >
+                  <button type="submit" disabled>Subir pelicula</button>
+                </div>) }
+                
               </div>
             </form>
           </div>
         </div>
       );
     }
-  }
+  } else if(window.innerWidth <= 875 && isSubmitted === true) {
+    return(
+      <div className="box" style={{display: "flex"}}>
+        <div className="box-container">
+
+      <div className="movieName" style={{zIndex:"3", width: "100%"}}>
+        <div className="mobileSpan">
+          <span>¡Felicitaciones!</span>
+          <br/>
+          <br/>
+          <span>{localMovie} fue correctamente subida. </span>
+        </div>
+           <div className="buttonBox">
+              <button onClick={handleClose}>Volver</button>
+            </div>
+                
+        </div>
+      </div>
+           </div>
+    )
+  } else {
+    return(
+      <div className="box" style={{display: "flex"}}>
+        <div className="box-container">
+
+      <div className="movieName" style={{zIndex:"3", width: "100%"}}>
+          <div className="liteflix" style={{margin: "40px"}}>
+          <span className="more-weight">Lite</span>
+            <span className="less-weight">flix</span>
+          </div>
+        <div className="mobileSpan">
+          <span>¡Felicitaciones!</span>
+          <br/>
+          <br/>
+          <span>{localMovie} fue correctamente subida. </span>
+        </div>
+           <div className="buttonBox">
+              <button onClick={handleClose}>Volver</button>
+            </div>
+                
+        </div>
+      </div>
+           </div>
+    )}
+}
 }

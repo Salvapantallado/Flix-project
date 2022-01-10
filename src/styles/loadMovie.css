@@ -32,6 +32,14 @@
   justify-content: flex-end;
 }
 
+.closeButton img {
+  width:20px;
+  height:20px;
+  margin: 10px;
+
+ 
+}
+
 .boxContainer {
   display: flex;
   flex-direction: column;
@@ -45,7 +53,7 @@
   font-size: 20px;
   font-weight: 100;
   margin: 25px;
-  width: 550px;
+  width: 600px;
   height: 120px;
   outline: dashed 1px white;
   color: white;
@@ -78,8 +86,45 @@ input:focus {
 }
 
 .buttonBox {
-  width: 200px;
-  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonBox button{
+  width: 250px;
+  margin: 20px 0 20px 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  background: #FFFFFF;
+	color: black;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.exitButton button{
+  width: 250px;
+  margin: 20px 0 20px 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.buttonBox button:disabled{
+  background-color: darkgrey;
+  cursor: default;
 }
 
 @media screen and (max-width: 875px) {
@@ -102,12 +147,6 @@ input:focus {
     margin-top: 80px;
   }
 
-  .closeButton {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-end;
-  }
-
   .boxContainer {
     display: flex;
     flex-direction: column;
@@ -121,13 +160,6 @@ input:focus {
     display: contents;
   }
 
-  .buttonBox img {
-    margin: 50px 0 50px 0;
-    border-radius: 0;
-    width: 200px;
-    height: auto;
-    display: flex;
-  }
 
   .addMovieBox {
     margin: 65px 0 65px 0;
@@ -140,5 +172,11 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mobileSpan span{
+    color: white;
+    font-family: Bebas Neue;
+    font-size: 20px
   }
 }

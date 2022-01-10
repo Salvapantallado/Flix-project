@@ -46,7 +46,7 @@ export default function TrendingMovies(props) {
       setLocalImage(imgimg);
       setLocalTitle(titletitle);
     } return
-  }, []);
+  }, [localStorage]);
 
   return (
     <div className="trending-box">
