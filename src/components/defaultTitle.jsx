@@ -6,7 +6,7 @@ import Secundario from "./images/Secundario.png";
 export default function DefaultMovieTitle(props) {
   const { defaultMovie } = props;
 
-  {
+  
     if (window.innerWidth <= 875) {
       return (
         <div
@@ -53,5 +53,5 @@ export default function DefaultMovieTitle(props) {
         </div>
       );
     }
-  }
+
 }

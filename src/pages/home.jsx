@@ -12,7 +12,6 @@ import TrendingMovies from "../components/trendingMovies";
 export default function Home(props) {
   const { defaultMovie, popularMovies } = props;
   const imageUrl = `https://image.tmdb.org/t/p/original`;
-
   if (defaultMovie.length !== 1) {
     return <div className="bg animate__zoomIn"></div>;
   } else if (window.innerWidth <= 875) {

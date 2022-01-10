@@ -6,7 +6,6 @@ import "animate.css";
 
 import Star from "./images/Star.png";
 import Arrow from "./images/arrow.png";
-import { useEffect } from "react/cjs/react.development";
 
 export default function TrendingMovies(props) {
   const { popularMovies, imageUrl } = props;
@@ -46,7 +45,7 @@ export default function TrendingMovies(props) {
       setLocalImage(imgimg);
       setLocalTitle(titletitle);
     } return
-  }, [localStorage]);
+  }, []);
 
   return (
     <div className="trending-box">
@@ -67,10 +66,10 @@ export default function TrendingMovies(props) {
               </i>
             </label>
             <div className="section-dropdown">
-              <a href="#" onClick={(e) => setActive(e.target.text)}>
+              <a role="button" onClick={(e) => setActive(e.target.text)}>
                 Populares<i className="uil uil-arrow-right"></i>
               </a>
-              <a href="#" onClick={(e) => setActive(e.target.text)}>
+              <a role="button" onClick={(e) => setActive(e.target.text)}>
                 Mis Peliculas<i className="uil uil-arrow-right"></i>
               </a>
             </div>
@@ -89,7 +88,7 @@ export default function TrendingMovies(props) {
                   <img src={Play} alt="Reproducir" />
                   <span>{`${x.title}`}</span>
                   <div className="star">
-                    <img src={Star} />
+                    <img src={Star} alt="Star Rating"/>
                   </div>
                   <div className="rating">
                     <p>{`${x.vote_average}`}</p>

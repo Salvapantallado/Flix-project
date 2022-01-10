@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 import Menu from "./images/menu.png";
 import Notification from "./images/notification.png";
@@ -12,9 +12,8 @@ export default function Navbar() {
 
   const handleClick = () => setShowComponent(!showComponent);
 
-  console.log(showComponent);
 
-  {
+  
     if (window.innerWidth <= 875) {
       return (
         <div className="navbar">
@@ -61,5 +60,5 @@ export default function Navbar() {
         </div>
       );
     }
-  }
+  
 }

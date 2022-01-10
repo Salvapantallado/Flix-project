@@ -24,6 +24,8 @@ function App() {
   
   useEffect(() => {
     getAllMovies()
+    console.log("Para versión mobile, cambiar resolución y recargar la página! Usar specs de Iphone X o max width de 875px");
+
   }, [])
 
   return (

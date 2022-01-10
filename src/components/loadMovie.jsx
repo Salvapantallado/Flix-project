@@ -40,13 +40,17 @@ export default function LoadMovie(props) {
     setShowComponent(false);
   };
 
+  const handleRefresh = () => {
+    window.location.reload(false)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true)
   };
 
 
-  {if(isSubmitted === false) 
+  if(isSubmitted === false) 
   {
     if (window.innerWidth <= 875) {
       return (
@@ -104,7 +108,7 @@ export default function LoadMovie(props) {
       return (
         <div className="box">
           <div className="closeButton">
-            <img src={Cerrar} onClick={handleClose} />
+            <img src={Cerrar} onClick={handleClose} alt="cerrar" />
           </div>
           <div className="boxContainer">
             <div
@@ -166,7 +170,7 @@ export default function LoadMovie(props) {
           <span>{localMovie} fue correctamente subida. </span>
         </div>
            <div className="buttonBox">
-              <button onClick={handleClose}>Volver</button>
+              <button onClick={handleRefresh}>Ir al home</button>
             </div>
                 
         </div>
@@ -190,12 +194,12 @@ export default function LoadMovie(props) {
           <span>{localMovie} fue correctamente subida. </span>
         </div>
            <div className="buttonBox">
-              <button onClick={handleClose}>Volver</button>
+              <button onClick={handleRefresh}>Volver</button>
             </div>
                 
         </div>
       </div>
            </div>
     )}
-}
+
 }
