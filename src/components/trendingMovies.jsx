@@ -39,7 +39,7 @@ export default function TrendingMovies(props) {
 
   const [active, setActive] = useState("Populares");
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (localStorage.length !== 0) {
       const imgimg = localStorage.getItem("recent-image");
       const titletitle = localStorage.getItem("movie-title");
