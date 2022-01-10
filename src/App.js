@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { getMovies, getTrending } from './api/api';
 import Home from './pages/home';
-import TrendingMovies from './components/trendingMovies';
+
 
 function App() {
   const [defaultMovie, setDefaultMovie] = useState([])
@@ -24,7 +24,7 @@ function App() {
   
   useEffect(() => {
     getAllMovies()
-  }, [TrendingMovies])
+  }, [])
 
   return (
     <div className="App">
