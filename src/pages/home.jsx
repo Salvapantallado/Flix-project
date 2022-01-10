@@ -1,9 +1,9 @@
 import React from "react";
 import "./home.css";
-import "../../styles/navbar.css";
-import "../../styles/defaultTitle.css";
-import "../../styles/trendingMovies.css";
-import "../../styles/loadMovie.css";
+import "../styles/navbar.css";
+import "../styles/defaultTitle.css";
+import "../styles/trendingMovies.css";
+import "../styles/loadMovie.css";
 
 import Navbar from "../components/navbar.jsx";
 import DefaultMovieTitle from "../components/defaultTitle";
