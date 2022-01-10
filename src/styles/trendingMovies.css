@@ -1,0 +1,210 @@
+/* Trending movies component */
+.trending-box {
+  width: 250px;
+}
+.trending-list {
+  position: absolute;
+  width: fit-content;
+  height: 18px;
+  left: 76%;
+  right: 10.76%;
+  top: calc(50% - 18px / 2 - 305px);
+
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 4px;
+
+  color: #ffffff;
+}
+
+.trending-list img {
+  width: 250px;
+  height: auto;
+  filter: brightness(1);
+  margin: 10px;
+}
+
+.trending {
+  margin-bottom: 5px;
+  width: 250px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.trending img {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  height: 10px;
+  background: none;
+  filter: brightness(1);
+  margin: 1px;
+}
+
+.play-icon {
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  bottom: 50%;
+}
+
+.container2 {
+  position: relative;
+  margin: 15px 0 15px 0;
+}
+
+.container2::before {
+  position: absolute;
+  z-index: 1;
+  height: 40%;
+  top: 60%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, black -30%, transparent);
+  pointer-events: none;
+  content: "";
+}
+
+.container img {
+  margin: 0;
+}
+
+.container2:hover .play-btn img,
+.container2.hover .play-btn {
+  z-index: 3;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 20%;
+  filter: brightness(1.5);
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.container2:hover .play-btn .star img,
+.container2.hover .play-btn .star {
+  background: transparent;
+}
+
+.container2:hover .play-btn span,
+.container2.hover .play-btn {
+  z-index: 2;
+  position: absolute;
+  width: 150px;
+  border-radius: 50%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 12px;
+}
+.play-btn p {
+  display: none;
+}
+.star img {
+  display: none;
+}
+.container2:hover .play-btn .star img,
+.container2.hover .play-btn {
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  position: absolute;
+  border-radius: 50%;
+  top: 84%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+
+.container2:hover .play-btn .release p,
+.container2.hover .play-btn {
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  position: absolute;
+  width: 350 px;
+  border-radius: 50%;
+  top: 85%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 12px;
+}
+
+.container2:hover .play-btn .rating p,
+.container2.hover .play-btn {
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  position: absolute;
+  width: 350 px;
+  border-radius: 50%;
+  top: 85%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 12px;
+}
+
+.container img:hover {
+  filter: brightness(0.7);
+}
+
+.container .play-btn img:hover {
+  filter: brightness(1.2);
+  background: mediumspringgreen;
+}
+
+.vote-release {
+  display: none;
+}
+
+.play-btn img {
+  z-index: 3;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.play-btn span {
+  z-index: 2;
+  position: absolute;
+  width: 200px;
+  border-radius: 50%;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 875px) {
+  .trending-box {
+    width: 100%;
+  }
+  .trending-list {
+    left: 15%;
+    top: calc(115% - 18px / 2 - 305px);
+  }
+  .container2 {
+    margin-bottom: 30px;
+  }
+}

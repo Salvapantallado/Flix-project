@@ -1,0 +1,112 @@
+/* Default movie title component */
+.liteflix-original {
+  position: absolute;
+  height: 20px;
+  width: fit-content;
+  left: 9.22%;
+  right: 78.89%;
+  top: calc(53% - 20px / 2 + 82px);
+
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 20px;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.movieTitle {
+  position: absolute;
+  width: 35%;
+  height: 100px;
+  left: 8.88%;
+  right: 31.18%;
+  top: calc(50% - 100px / 2 + 166px);
+
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-size: 90px;
+  line-height: 100px;
+
+  letter-spacing: 16px;
+  text-transform: uppercase;
+
+  color: #64eebc;
+}
+
+.movieTitle h3 {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+  font-weight: 500;
+  text-align: start;
+}
+
+.default-buttons {
+  display: flex;
+}
+
+.default-buttons img {
+  width: 230px;
+  height: 55px;
+  margin: 10px 10px 10px 30px;
+  background-color: none;
+  filter: opacity(1);
+}
+
+@media screen and (max-width: 875px) {
+  .defaultBox {
+    top: 5%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100 vw;
+    height: auto;
+  }
+
+  .liteflix-original {
+    position: absolute;
+    height: 20px;
+    width: fit-content;
+    left: 21.22%;
+    right: 78.89%;
+    top: calc(20% - 20px / 2 + 82px);
+
+    font-size: 20px;
+  }
+
+  .movieTitle {
+    width: 90%;
+    top: calc(20% - 100px / 2 + 166px);
+    line-height: 45px;
+    letter-spacing: 14px;
+  }
+
+  .movieTitle h3 {
+    font-size: 44px;
+  }
+
+  .default-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: flex-start;
+    background: linear-gradient(0deg, black 90%, transparent);
+    left: -11%;
+    height: 11em;
+    width: 110%;
+    align-items: center;
+  }
+
+  .default-buttons img {
+    width: 230px;
+    height: 55px;
+    margin: 10px 10px 10px 30px;
+    background-color: none;
+    filter: opacity(1);
+  }
+}

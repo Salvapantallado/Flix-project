@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Home component */
+.bg img {
+  position: initial;
+  width: auto;
+  height: 99.6vh;
+  filter: brightness(0.6);
+  background-color: none;
+}
+
+@media screen and (max-width: 875px) {
+  .bg img {
+    height: auto;
+    width: -webkit-fill-available;
+  }
+}
