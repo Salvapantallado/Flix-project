@@ -58,6 +58,7 @@
 .container2 {
   position: relative;
   margin: 15px 0 15px 0;
+  cursor: pointer;
 }
 
 .container2::before {
@@ -100,7 +101,7 @@
 .container2.hover .play-btn {
   z-index: 2;
   position: absolute;
-  width: 150px;
+  width: 140px;
   border-radius: 50%;
   top: 52%;
   left: 50%;
@@ -201,8 +202,10 @@
     width: 100%;
   }
   .trending-list {
-    left: 15%;
-    top: calc(115% - 18px / 2 - 305px);
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: calc(100% - 18px / 2 - 305px);
   }
   .container2 {
     margin-bottom: 30px;

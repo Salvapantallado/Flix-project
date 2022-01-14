@@ -78,19 +78,20 @@
   padding-bottom: 10px;
 }
 
-.addMovie img {
+.addMovie button {
   width: 230px;
   height: auto;
-  border-radius: 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  filter: brightness(1);
+  font-family: Bebas Neue;
+  font-size: 23px;
+  font-weight: 100;
+  color: white;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  filter: opacity(1);
 }
 
 @media screen and (max-width: 875px) {
-  .navbar {
-    top: calc(55% - 34px / 2 - 414px);
-  }
 
   .navbar img {
     display: inline-flex;

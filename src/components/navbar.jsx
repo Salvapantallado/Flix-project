@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Menu from "./images/menu.png";
 import Notification from "./images/notification.png";
 import User from "./images/user.png";
-import Link from "./images/Link.png";
 import AddMovie from "./images/AddMovie.png";
 import LoadMovie from "./loadMovie";
 
@@ -42,7 +41,7 @@ export default function Navbar() {
             <span className="more-weight">Lite</span>
             <span className="less-weight">flix</span>
             <div className="addMovie animate__animated animate__fadeInDown">
-              <img onClick={handleClick} src={Link} alt="Agregar pelicula" />
+            <button className="AddMovie-btn" onClick={handleClick}>+ Agregar Pelicula</button>
               {showComponent ? (
                 <LoadMovie
                   showComponent={showComponent}

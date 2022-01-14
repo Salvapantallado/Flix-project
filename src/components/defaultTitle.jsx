@@ -1,8 +1,5 @@
 import React from "react";
 
-import Primario from "./images/Primario.png";
-import Secundario from "./images/Secundario.png";
-
 export default function DefaultMovieTitle(props) {
   const { defaultMovie } = props;
 
@@ -28,8 +25,8 @@ export default function DefaultMovieTitle(props) {
             <h3>{`${defaultMovie[0].original_title}`}</h3>
 
             <div className="default-buttons animate__animated animate__fadeInDown">
-              <img src={Primario} alt="Reproducir" />
-              <img src={Secundario} alt="Mi Lista" />
+            <button className="primary-btn">▷ REPRODUCIR</button>
+              <button className="secondary-btn">+ MI LISTA</button>
             </div>
           </div>
         </div>
@@ -46,8 +43,8 @@ export default function DefaultMovieTitle(props) {
             <h3>{`${defaultMovie[0].original_title}`}</h3>
 
             <div className="default-buttons animate__animated animate__fadeInDown">
-              <img src={Primario} alt="Reproducir" />
-              <img src={Secundario} alt="Mi Lista" />
+              <button className="primary-btn">▷ REPRODUCIR</button>
+              <button className="secondary-btn">+ MI LISTA</button>
             </div>
           </div>
         </div>
