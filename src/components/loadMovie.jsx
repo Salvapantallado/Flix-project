@@ -9,32 +9,56 @@ export default function LoadMovie(props) {
   const { setShowComponent } = props;
 
   const [file, setFile] = useState([]);
+
+  const [object, setObject] = useState({
+    nombre: "",
+    imagen: "",
+  } )
+
   const [title, setTitle] = useState("");
+  
+  
   const [localMovie, setLocalMovie] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
 
 
+  // const handleImageChange = (file) => {
+  //   setFile(file);
+
+  //   const reader = new FileReader();
+
+  //   reader.addEventListener("load", () => {
+  //     localStorage.setItem("recent-image", reader.result);
+  //   });
+
+  //   reader.readAsDataURL(file);
+  // };
+
+
   const handleImageChange = (file) => {
-    setFile(file);
-
-    const reader = new FileReader();
-
-    reader.addEventListener("load", () => {
-      localStorage.setItem("recent-image", reader.result);
-    });
-
-    reader.readAsDataURL(file);
+    setFile(file)
+    setObject({ ...object, imagen: file});
+    console.log(object, "image");
+    console.log(file);
   };
+
+  // const handleTextChange = (title) => {
+  //   setTitle(title.target.value);
+  //   console.log(title.target.value);
+  //   localStorage.setItem("movie-title", title.target.value);
+  //   if (title) {
+  //     const localTitle = localStorage.getItem("movie-title");
+  //     setLocalMovie(localTitle)
+  //   }
+  // };
 
   const handleTextChange = (title) => {
-    setTitle(title.target.value);
+    setTitle(title.target.value)
+    setObject({...object, nombre: title.target.value})
+    console.log(object, "title");
     console.log(title.target.value);
-    localStorage.setItem("movie-title", title.target.value);
-    if (title) {
-      const localTitle = localStorage.getItem("movie-title");
-      setLocalMovie(localTitle)
-    }
   };
+
 
   const handleClose = () => {
     setShowComponent(false);
@@ -46,6 +70,9 @@ export default function LoadMovie(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let arr_serialized = JSON.stringify(object);
+    localStorage.setItem("Obj", arr_serialized);
+    console.log(arr_serialized);
     setIsSubmitted(true)
   };
 
@@ -75,8 +102,8 @@ export default function LoadMovie(props) {
                 <div className="addMovieBox">
                   <span>
                     {file.length !== 0
-                      ? `Nombre del archivo: ${file.name}`
-                      : "🔗 Agregá un archivo"}
+                      ? `File name: ${file.name}`
+                      : "🔗 Add file"}
                   </span>
                 </div>
               }
@@ -88,16 +115,16 @@ export default function LoadMovie(props) {
                   value={title}
                   type="text"
                   onChange={handleTextChange}
-                  placeholder="Titulo"
+                  placeholder="Title"
                 ></input>
 
                   {title !== "" && file.length !== 0 ? (<div className="buttonBox">
-                  <button type="submit">Subir pelicula</button>
+                  <button type="submit">Upload Movie</button>
                 </div>) : (<div className="buttonBox" >
-                  <button type="submit" disabled>Subir pelicula</button>
+                  <button type="submit" disabled>Upload Movie</button>
                 </div>) }
                   <div className="exitButton">
-                    <button onClick={handleClose}>Salir</button>
+                    <button onClick={handleClose}>Exit</button>
                     </div>
               </div>
             </form>
@@ -119,7 +146,7 @@ export default function LoadMovie(props) {
                 marginBottom: "10px",
               }}
             >
-              Agregar pelicula
+              Add Movie 
             </div>
             <FileUploader
               handleChange={handleImageChange}
@@ -130,8 +157,8 @@ export default function LoadMovie(props) {
                 <div className="addMovieBox">
                   <span>
                     {file.length !== 0
-                      ? `Nombre del archivo: ${file.name}`
-                      : "🔗 Agregá un archivo o arrastralo y soltalo aquí"}
+                      ? `File name: ${file.name}`
+                      : "🔗 Add file or drag-and-drop it here"}
                   </span>
                 </div>
               }
@@ -143,12 +170,12 @@ export default function LoadMovie(props) {
                   value={title}
                   type="text"
                   onChange={handleTextChange}
-                  placeholder="Titulo"
+                  placeholder="Title"
                 ></input>
                 {title !== "" && file.length !== 0 ? (<div className="buttonBox">
-                  <button type="submit">Subir pelicula</button>
+                  <button type="submit">Upload Movie</button>
                 </div>) : (<div className="buttonBox" >
-                  <button type="submit" disabled>Subir pelicula</button>
+                  <button type="submit" disabled>Upload Movie</button>
                 </div>) }
                 
               </div>
@@ -164,13 +191,13 @@ export default function LoadMovie(props) {
 
       <div className="movieName" style={{zIndex:"3", width: "100%"}}>
         <div className="mobileSpan">
-          <span>¡Felicitaciones!</span>
+          <span>Congratulations!</span>
           <br/>
           <br/>
-          <span>{localMovie} fue correctamente subida. </span>
+          <span>{localMovie} has been uploaded successfully. </span>
         </div>
            <div className="buttonBox">
-              <button onClick={handleRefresh}>Ir al home</button>
+              <button onClick={handleRefresh}>Back to Home</button>
             </div>
                 
         </div>
@@ -184,17 +211,17 @@ export default function LoadMovie(props) {
 
       <div className="movieName" style={{zIndex:"3", width: "100%"}}>
           <div className="liteflix" style={{margin: "40px"}}>
-          <span className="more-weight">Lite</span>
-            <span className="less-weight">flix</span>
+          <span className="more-weight">Flix</span>
+            <span className="less-weight">Flix</span>
           </div>
         <div className="mobileSpan">
-          <span>¡Felicitaciones!</span>
+          <span>Congratulations!</span>
           <br/>
           <br/>
-          <span>{localMovie} fue correctamente subida. </span>
+          <span>{localMovie} has been uploaded successfully. </span>
         </div>
            <div className="buttonBox">
-              <button onClick={handleRefresh}>Volver</button>
+              <button onClick={handleRefresh}>Go back</button>
             </div>
                 
         </div>

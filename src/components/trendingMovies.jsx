@@ -36,22 +36,34 @@ export default function TrendingMovies(props) {
   const [localImage, setLocalImage] = useState([]);
   const [localTitle, setLocalTitle] = useState("");
 
-  const [active, setActive] = useState("Populares");
+  const [active, setActive] = useState("Popular");
+
+  // React.useEffect(() => {
+  //   if (localStorage.length !== 0) {
+  //     const imgimg = localStorage.getItem("recent-image");
+  //     const titletitle = localStorage.getItem("movie-title");
+  //     setLocalImage(imgimg);
+  //     setLocalTitle(titletitle);
+  //   } return
+  // }, []);
 
   React.useEffect(() => {
     if (localStorage.length !== 0) {
-      const imgimg = localStorage.getItem("recent-image");
-      const titletitle = localStorage.getItem("movie-title");
-      setLocalImage(imgimg);
-      setLocalTitle(titletitle);
-    } return
-  }, []);
+  let arr_deserialized = JSON.parse(localStorage.getItem("Obj"));
+  console.log(arr_deserialized);
+  setLocalImage(arr_deserialized.imagen);
+  console.log(localImage);
+  setLocalTitle(arr_deserialized.nombre);
+  console.log(localTitle);
+} return
+}, []);
+
 
   return (
     <div className="trending-box">
       <div className="trending-list  animate__animated animate__fadeInDown">
         <div className="trending">
-          Ver:
+          Watch:
           <div>
             <input
               className="dropdown"
@@ -67,16 +79,16 @@ export default function TrendingMovies(props) {
             </label>
             <div className="section-dropdown">
               <a role="button" onClick={(e) => setActive(e.target.text)}>
-                Populares<i className="uil uil-arrow-right"></i>
+                Popular<i className="uil uil-arrow-right"></i>
               </a>
               <a role="button" onClick={(e) => setActive(e.target.text)}>
-                Mis Peliculas<i className="uil uil-arrow-right"></i>
+                My Movies<i className="uil uil-arrow-right"></i>
               </a>
             </div>
           </div>
         </div>
         <div className="container">
-          {active === "Populares" ? (
+          {active === "Popular" ? (
             displayArray.map((x) => (
               <div
                 key={`${x.id}`}

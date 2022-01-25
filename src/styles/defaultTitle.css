@@ -1,4 +1,13 @@
 /* Default movie title component */
+
+.container {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
 .liteflix-original {
   position: absolute;
   height: 20px;
@@ -20,8 +29,8 @@
 
 .movieTitle {
   position: absolute;
-  width: 35%;
-  height: 100px;
+  width: 40%;
+  height: 200px;
   left: 8.88%;
   right: 31.18%;
   top: calc(50% - 100px / 2 + 166px);
@@ -38,10 +47,12 @@
 }
 
 .movieTitle h3 {
-  margin-block-start: 10px;
-  margin-block-end: 10px;
+  margin-block-start: 20px;
+  margin-block-end: 20px;
   font-weight: 500;
   text-align: start;
+  padding-left:5%;
+  padding-right:10%;
 }
 
 .default-buttons {
@@ -61,6 +72,9 @@
   filter: opacity(1);
 }
 
+.container .more-weight {
+  margin-left: 30px;
+}
 
 .secondary-btn {
   width: 230px;

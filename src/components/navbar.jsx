@@ -26,8 +26,8 @@ export default function Navbar() {
             ) : null}
           </div>
           <div className="liteflix animate__animated animate__fadeInDown">
-            <span className="more-weight">Lite</span>
-            <span className="less-weight">flix</span>
+            <span className="more-weight">Flix</span>
+            <span className="less-weight">Flix</span>
           </div>
           <div className="animate__animated animate__fadeInRight">
             <img src={User} alt="Usuario" />
@@ -38,10 +38,10 @@ export default function Navbar() {
       return (
         <div className="navbar">
           <div className="liteflix animate__animated animate__fadeInDown">
-            <span className="more-weight">Lite</span>
-            <span className="less-weight">flix</span>
+            <span className="more-weight">Flix</span>
+            <span className="less-weight">Flix</span>
             <div className="addMovie animate__animated animate__fadeInDown">
-            <button className="AddMovie-btn" onClick={handleClick}>+ Agregar Pelicula</button>
+            <button className="AddMovie-btn" onClick={handleClick}>+ Add movie</button>
               {showComponent ? (
                 <LoadMovie
                   showComponent={showComponent}
